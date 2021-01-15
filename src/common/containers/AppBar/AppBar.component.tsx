@@ -9,7 +9,6 @@ import {
 
 import NavLinkButton from "common/components/NavLinkButton/NavLinkButton.component";
 import style from "./AppBar.style";
-import img from "../../../../assets/logo1.png";
 
 interface AppBarProps {
     classes: any;
@@ -40,11 +39,12 @@ class AppBar extends React.Component<AppBarProps> {
                                     variant="contained"
                                     to="/"
                                 >
-                                    <img
+                                    {/* <img
                                         src={img}
                                         width="200px"
                                         height="70px"
-                                    />
+                                    /> */}
+                                    <span>temp</span>
                                 </NavLinkButton>
                             </Grid>
                             <Grid item className={classes.menuButtonsContainer}>
@@ -56,7 +56,7 @@ class AppBar extends React.Component<AppBarProps> {
                                         className={classes.menuButton}
                                         to="/"
                                     >
-                                        <Typography>Services</Typography>
+                                        <Typography>Stocks</Typography>
                                     </NavLinkButton>
                                 </Grid>
                                 <Grid
@@ -67,7 +67,7 @@ class AppBar extends React.Component<AppBarProps> {
                                         className={classes.menuButton}
                                         to="/"
                                     >
-                                        <Typography>Gallery</Typography>
+                                        <Typography>Crypto</Typography>
                                     </NavLinkButton>
                                 </Grid>
                                 <Grid
@@ -78,7 +78,7 @@ class AppBar extends React.Component<AppBarProps> {
                                         className={classes.menuButton}
                                         to="/"
                                     >
-                                        <Typography>About Us</Typography>
+                                        <Typography>About</Typography>
                                     </NavLinkButton>
                                 </Grid>
                                 <Grid
@@ -101,7 +101,9 @@ class AppBar extends React.Component<AppBarProps> {
                                     <NavLinkButton
                                         className={classes.menuButton}
                                         to="/"
-                                    ></NavLinkButton>
+                                    >
+                                        <span>temp</span>
+                                    </NavLinkButton>
                                 </Grid>
                             </Grid>
                         </Grid>
