@@ -9,15 +9,13 @@ interface HomeProps {
     updateTitle: any;
 }
 
-class Home extends React.Component<HomeProps> {
-    public render() {
-        return (
-            <React.Fragment>
-                <Typography>Home page</Typography>
-            </React.Fragment>
-        );
-    }
-}
+const Home = (props: HomeProps) => {
+    return (
+        <React.Fragment>
+            <Typography>Home page</Typography>
+        </React.Fragment>
+    );
+};
 
 const mapStateToProps = (state: Store) => {
     return {};

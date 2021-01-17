@@ -11,24 +11,18 @@ interface NavLinkButtonProps extends Button.ButtonProps {
     to: string;
 }
 
-class NavLinkButton extends React.Component<NavLinkButtonProps> {
-    constructor(props: NavLinkButtonProps) {
-        super(props);
-    }
+const NavLinkButton = (navProps: NavLinkButtonProps) => {
+    const { classes, children, to, ...props } = navProps;
 
-    public render() {
-        const { classes, children, to, ...props } = this.props;
-
-        return (
-            <React.Fragment>
-                <NavLink to={to} className={classes.navLink}>
-                    <Button.default className={classes.button} {...props}>
-                        {children}
-                    </Button.default>
-                </NavLink>
-            </React.Fragment>
-        );
-    }
-}
+    return (
+        <React.Fragment>
+            <NavLink to={to} className={classes.navLink}>
+                <Button.default className={classes.button} {...props}>
+                    {children}
+                </Button.default>
+            </NavLink>
+        </React.Fragment>
+    );
+};
 
 export default withStyles(style)(NavLinkButton);
