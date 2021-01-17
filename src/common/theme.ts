@@ -1,6 +1,7 @@
 import { createMuiTheme } from "@material-ui/core";
+import { useState } from "react";
 
-const theme = createMuiTheme({
+const themeObject = createMuiTheme({
     palette: {
         primary: {
             main: "#fff",
@@ -18,4 +19,24 @@ const theme = createMuiTheme({
     }
 });
 
-export default theme;
+// export const useDarkMode = () => {
+//     const [theme, setTheme] = useState(themeObject);
+
+//     const {
+//         palette: { type }
+//     } = theme;
+
+//     const toggleDarkMode = () => {
+//         const updatedTheme = {
+//             ...theme,
+//             palette: {
+//                 ...theme.palette,
+//                 type: type === "light" ? "dark" : "light"
+//             }
+//         };
+//         setTheme(updatedTheme);
+//     };
+//     return [theme, toggleDarkMode];
+// };
+
+export default themeObject;

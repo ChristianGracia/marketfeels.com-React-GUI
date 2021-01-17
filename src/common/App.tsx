@@ -5,15 +5,15 @@ import Home from "common/pages/Home";
 
 import AppBar from "common/containers/AppBar/AppBar.component";
 
-export default class App extends React.Component {
-    public render() {
-        return (
-            <React.Fragment>
-                <AppBar />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                </Switch>
-            </React.Fragment>
-        );
-    }
-}
+const App = () => {
+    return (
+        <React.Fragment>
+            <AppBar />
+            <Switch>
+                <Route exact path="/" component={Home} />
+            </Switch>
+        </React.Fragment>
+    );
+};
+
+export default App;
