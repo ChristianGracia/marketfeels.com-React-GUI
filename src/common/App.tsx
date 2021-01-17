@@ -4,7 +4,11 @@ import { Switch, Route } from "react-router-dom";
 import Home from "common/pages/Home";
 
 import AppBar from "common/containers/AppBar/AppBar.component";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
+import {
+    createMuiTheme,
+    MuiThemeProvider,
+    PaletteType
+} from "@material-ui/core";
 import { useState } from "react";
 import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
 
@@ -16,8 +20,8 @@ const themeObject = {
     },
     themeName: "Blue Lagoon 2020",
     typography: {
-        useNextVariants: true,
-        fontFamily: "Bitter"
+        fontFamily: "Bitter",
+        useNextVariants: true
     }
 };
 
@@ -32,23 +36,36 @@ const useDarkMode = () => {
             ...theme,
             palette: {
                 ...theme.palette,
-                type: type === "light" ? "dark" : "light"
+                type:
+                    type === "light"
+                        ? ("dark" as PaletteType)
+                        : ("light" as PaletteType)
             }
         };
         setTheme(updatedTheme);
+        console.log("updated");
+        console.log(updatedTheme);
     };
     return [theme, toggleDarkMode];
 };
 
 const App = () => {
     const [theme, toggleDarkMode] = useDarkMode();
-
-    const themeConfig = createMuiTheme(theme);
+    console.log(theme);
+    const themeConfig = createMuiTheme(theme as ThemeOptions);
+    console.log(themeConfig);
     const sheetsManager = new Map();
+
+    const [themes, setThemes] = useState<string>(themeConfig.palette.type);
+
+    React.useEffect(() => {
+        setThemes(themeConfig.palette.type);
+    }, [themeConfig]);
     return (
         <React.Fragment>
             <MuiThemeProvider theme={themeConfig} sheetsManager={sheetsManager}>
                 <AppBar toggleDarkMode={toggleDarkMode} />
+                <p>{themes}</p>
                 <Switch>
                     <Route exact path="/" component={Home} />
                 </Switch>

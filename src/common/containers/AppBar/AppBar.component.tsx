@@ -93,7 +93,7 @@ const AppBar = (props: AppBarProps) => {
                                         control={
                                             <Switch
                                                 onClick={() =>
-                                                    props.toggleDarkMode
+                                                    classes.toggleDarkMode
                                                 }
                                             />
                                         }
