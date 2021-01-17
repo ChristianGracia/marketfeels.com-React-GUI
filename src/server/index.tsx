@@ -53,12 +53,15 @@ function main() {
 
         res.send(`
             <!DOCTYPE html>
-            <html>
+            <html lang="en">
                 <head>
-                  <meta name="description" content="Stock Scraping" />
-                  <meta name="stockscraper" content="stockscraper" />
-                  <meta name="keywords"content="stock crypto price reddit ai" />
-                  <title>Stock Scraper</title>
+                  <meta name="description" content="Stock + Crypto market sentiment from all over the internet in one place" />
+                  <meta name="keywords"content="marketfeels market crypto stock ai scraping christiangracia charts" />
+                  <meta charset="utf-8" />
+                  <title>MarketFeels.com - See whats being talked about</title>
+                  <base href="/" />
+
+                  <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <style>
                         body {
                             margin: 0px;
