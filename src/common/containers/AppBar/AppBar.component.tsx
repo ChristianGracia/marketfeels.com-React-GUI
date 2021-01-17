@@ -12,8 +12,6 @@ import {
 import NavLinkButton from "common/components/NavLinkButton/NavLinkButton.component";
 import style from "./AppBar.style";
 
-import { useState } from "react";
-
 interface AppBarProps {
     classes: any;
     toggleDarkMode: () => void;
@@ -21,7 +19,6 @@ interface AppBarProps {
 
 const AppBar = (props: AppBarProps) => {
     const { classes } = props;
-    const [checked, handleChange] = useState(false);
 
     return (
         <React.Fragment>
@@ -46,7 +43,9 @@ const AppBar = (props: AppBarProps) => {
                                         width="200px"
                                         height="70px"
                                     /> */}
-                                <span>temp</span>
+                                <Typography color="textSecondary">
+                                    temp
+                                </Typography>
                             </NavLinkButton>
                         </Grid>
                         <Grid item className={classes.menuButtonsContainer}>
@@ -93,7 +92,9 @@ const AppBar = (props: AppBarProps) => {
                                         label="dark mode"
                                         control={
                                             <Switch
-                                                onClick={props.toggleDarkMode()}
+                                                onClick={() =>
+                                                    props.toggleDarkMode
+                                                }
                                             />
                                         }
                                     ></FormControlLabel>

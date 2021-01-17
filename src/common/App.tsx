@@ -6,32 +6,27 @@ import Home from "common/pages/Home";
 import AppBar from "common/containers/AppBar/AppBar.component";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
 import { useState } from "react";
+import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
 
 const themeObject = {
     palette: {
-        primary: {
-            main: "#fff"
-            // light: "#2D77A9",
-            // dark: "#998899",
-            // contrastText: "#212121"
-        },
-        secondary: {
-            main: "#000"
-            // light: "#aab6fe",
-            // dark: "#000",
-            // contrastText: "#fafafa"
-        },
+        primary: { main: "#053f5b" },
+        secondary: { main: "#5e3c6f" },
         type: "light"
+    },
+    themeName: "Blue Lagoon 2020",
+    typography: {
+        useNextVariants: true,
+        fontFamily: "Bitter"
     }
 };
 
-export const useDarkMode = () => {
+const useDarkMode = () => {
     const [theme, setTheme] = useState(themeObject);
 
     const {
         palette: { type }
     } = theme;
-
     const toggleDarkMode = () => {
         const updatedTheme = {
             ...theme,
@@ -47,10 +42,12 @@ export const useDarkMode = () => {
 
 const App = () => {
     const [theme, toggleDarkMode] = useDarkMode();
+
     const themeConfig = createMuiTheme(theme);
+    const sheetsManager = new Map();
     return (
         <React.Fragment>
-            <MuiThemeProvider theme={themeConfig}>
+            <MuiThemeProvider theme={themeConfig} sheetsManager={sheetsManager}>
                 <AppBar toggleDarkMode={toggleDarkMode} />
                 <Switch>
                     <Route exact path="/" component={Home} />
