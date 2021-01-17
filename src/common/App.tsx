@@ -38,7 +38,7 @@ const useDarkMode = () => {
     const {
         palette: { type }
     } = theme;
-    const toggleDarkMode = () => {
+    const toggleDarkMode = (): any => {
         const updatedTheme = {
             ...theme,
             palette: {

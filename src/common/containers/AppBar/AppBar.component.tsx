@@ -13,7 +13,7 @@ import NavLinkButton from "common/components/NavLinkButton/NavLinkButton.compone
 import style from "./AppBar.style";
 
 interface AppBarProps {
-    toggleDarkMode: () => void;
+    toggleDarkMode: any;
     classes: any;
 }
 
