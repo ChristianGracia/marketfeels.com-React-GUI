@@ -13,8 +13,8 @@ import NavLinkButton from "common/components/NavLinkButton/NavLinkButton.compone
 import style from "./AppBar.style";
 
 interface AppBarProps {
+    toggleDarkMode: (event: Event) => void;
     classes: any;
-    toggleDarkMode: () => void;
 }
 
 const AppBar = (props: AppBarProps) => {
@@ -36,7 +36,7 @@ const AppBar = (props: AppBarProps) => {
                                 className={classes.menuButton}
                                 variant="contained"
                                 to="/"
-                                color="primary"
+                                color="secondary"
                             >
                                 {/* <img
                                         src={img}
@@ -92,9 +92,7 @@ const AppBar = (props: AppBarProps) => {
                                         label="dark mode"
                                         control={
                                             <Switch
-                                                onClick={() =>
-                                                    classes.toggleDarkMode
-                                                }
+                                                onClick={props.toggleDarkMode}
                                             />
                                         }
                                     ></FormControlLabel>
