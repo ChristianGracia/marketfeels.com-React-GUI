@@ -11,14 +11,17 @@ import {
 
 import NavLinkButton from "common/components/NavLinkButton/NavLinkButton.component";
 import style from "./AppBar.style";
-import { render } from "react-dom";
+
+import { useState } from "react";
 
 interface AppBarProps {
     classes: any;
+    toggleDarkMode: () => void;
 }
 
 const AppBar = (props: AppBarProps) => {
     const { classes } = props;
+    const [checked, handleChange] = useState(false);
 
     return (
         <React.Fragment>
@@ -36,6 +39,7 @@ const AppBar = (props: AppBarProps) => {
                                 className={classes.menuButton}
                                 variant="contained"
                                 to="/"
+                                color="primary"
                             >
                                 {/* <img
                                         src={img}
@@ -80,10 +84,21 @@ const AppBar = (props: AppBarProps) => {
                             </Grid>
                         </Grid>
                         <Grid item className={classes.socialMediaContainer}>
-                            <Grid
-                                item
-                                className={classes.menuButtonContainer}
-                            ></Grid>
+                            <Grid item className={classes.menuButtonContainer}>
+                                <NavLinkButton
+                                    className={classes.menuButton}
+                                    to="/"
+                                >
+                                    <FormControlLabel
+                                        label="dark mode"
+                                        control={
+                                            <Switch
+                                                onClick={props.toggleDarkMode()}
+                                            />
+                                        }
+                                    ></FormControlLabel>
+                                </NavLinkButton>
+                            </Grid>
                         </Grid>
                     </Grid>
                 </Toolbar>
@@ -93,10 +108,3 @@ const AppBar = (props: AppBarProps) => {
 };
 
 export default withStyles(style)(AppBar);
-// <FormControlLabel
-//     control={
-//         <Switch
-//             onClick={toggleDarkMode}
-//         />
-//     }
-// ></FormControlLabel>

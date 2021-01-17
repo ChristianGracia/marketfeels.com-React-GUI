@@ -12,7 +12,7 @@ import {
 } from "@material-ui/core/styles";
 
 import App from "common/App";
-import theme from "common/theme";
+// import theme from "common/theme";
 import { changeTitle } from "common/redux/reducers/title";
 
 declare const module: any;
@@ -35,12 +35,12 @@ function main() {
                         registry={sheetsRegistry}
                         generateClassName={createGenerateClassName()}
                     >
-                        <MuiThemeProvider
+                        {/* <MuiThemeProvider
                             theme={theme}
                             sheetsManager={sheetsManager}
-                        >
-                            <App />
-                        </MuiThemeProvider>
+                        > */}
+                        <App />
+                        {/* </MuiThemeProvider> */}
                     </JssProvider>
                 </Router>
             </ReduxProvider>
@@ -58,12 +58,12 @@ function main() {
                   <meta name="description" content="Stock + Crypto market sentiment from all over the internet in one place" />
                   <meta name="keywords"content="marketfeels market crypto stock ai scraping christiangracia charts" />
                   <meta charset="utf-8" />
-                  <title>MarketFeels.com - See whats being talked about</title>
+                  <title>wMarketFeels.com - See whats being talked about</title>
                   <base href="/" />
-                  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-                  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favico/favicon-32x32.png">
-                  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favico/favicon-16x16.png">
-                  <link rel="manifest" href="../../assets/favico/site.webmanifest">
+                  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+                  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+                  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+                  <link rel="manifest" href="/site.webmanifest">
 
                   <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <style>

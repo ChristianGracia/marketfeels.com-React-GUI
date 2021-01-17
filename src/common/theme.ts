@@ -1,23 +1,23 @@
-import { createMuiTheme } from "@material-ui/core";
-import { useState } from "react";
+// import { createMuiTheme } from "@material-ui/core";
+// import { useState } from "react";
 
-const themeObject = createMuiTheme({
-    palette: {
-        primary: {
-            main: "#fff",
-            light: "#2D77A9",
-            dark: "#152238",
-            contrastText: "#212121"
-        },
-        secondary: {
-            main: "#7986cb",
-            light: "#aab6fe",
-            dark: "#49599a",
-            contrastText: "#fafafa"
-        },
-        type: "light"
-    }
-});
+// const themeObject = createMuiTheme({
+//     palette: {
+//         primary: {
+//             main: "#fff",
+//             light: "#2D77A9",
+//             dark: "#998899",
+//             contrastText: "#212121"
+//         },
+//         secondary: {
+//             main: "#7986cb",
+//             light: "#aab6fe",
+//             dark: "#998899 ",
+//             contrastText: "#fafafa"
+//         },
+//         type: "light"
+//     }
+// });
 
 // export const useDarkMode = () => {
 //     const [theme, setTheme] = useState(themeObject);
@@ -39,4 +39,4 @@ const themeObject = createMuiTheme({
 //     return [theme, toggleDarkMode];
 // };
 
-export default themeObject;
+// export default theme;
