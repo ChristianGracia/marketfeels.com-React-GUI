@@ -6,7 +6,8 @@ import {
     Toolbar,
     withStyles,
     FormControlLabel,
-    Switch
+    Switch,
+    Paper
 } from "@material-ui/core";
 
 import NavLinkButton from "common/components/NavLinkButton/NavLinkButton.component";
@@ -24,8 +25,12 @@ const AppBar = (props: AppBarProps) => {
     const { classes } = props;
 
     return (
-        <React.Fragment>
+        <Paper square>
             <BaseAppBar position="static" className={classes.navContainer}>
+                <div className={classes.siteLogoContainer}>
+                    <SVG src={logo} width={600} height="auto" />
+                </div>
+
                 <Toolbar>
                     <Grid container className={classes.gridContainer}>
                         <Grid
@@ -35,8 +40,7 @@ const AppBar = (props: AppBarProps) => {
                             sm={3}
                             md={2}
                         >
-                            <SVG src={logo} />
-                            <SVG src={hamburger} />
+                            <SVG src={hamburger} width={24} height="auto" />
                             {/* <img src={Image} width="200px" height="70px" /> */}
                             <NavLinkButton
                                 className={classes.menuButton}
@@ -103,7 +107,7 @@ const AppBar = (props: AppBarProps) => {
                     </Grid>
                 </Toolbar>
             </BaseAppBar>
-        </React.Fragment>
+        </Paper>
     );
 };
 
