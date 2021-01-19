@@ -7,7 +7,14 @@ import {
     withStyles,
     FormControlLabel,
     Switch,
-    Paper
+    Paper,
+    Button,
+    Drawer,
+    Divider,
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText
 } from "@material-ui/core";
 
 import NavLinkButton from "common/components/NavLinkButton/NavLinkButton.component";
@@ -24,9 +31,62 @@ interface AppBarProps {
 const AppBar = (props: AppBarProps) => {
     const { classes } = props;
 
+    const [state, setState] = React.useState({
+        left: false
+    });
+
+    const toggleDrawer = (anchor: any, open: any) => (event: any) => {
+        if (
+            event.type === "keydown" &&
+            (event.key === "Tab" || event.key === "Shift")
+        ) {
+            return;
+        }
+
+        setState({ ...state, [anchor]: open });
+    };
+
+    const list = (anchor: any) => (
+        <div
+            role="presentation"
+            onClick={toggleDrawer(anchor, false)}
+            onKeyDown={toggleDrawer(anchor, false)}
+        >
+            <List>
+                {["Most mentions today", "Stocks", "Crypto"].map(
+                    (text, index) => (
+                        <ListItem button key={text}>
+                            <ListItemText primary={text} />
+                        </ListItem>
+                    )
+                )}
+            </List>
+            <Divider />
+            <List>
+                {["About", "Contact"].map((text, index) => (
+                    <ListItem button key={text}>
+                        <ListItemText primary={text} />
+                    </ListItem>
+                ))}
+            </List>
+        </div>
+    );
+
     return (
         <Paper square>
             <BaseAppBar position="static" className={classes.navContainer}>
+                <div key={"left"} className={classes.hamburgerMenu}>
+                    <Button onClick={toggleDrawer("left", true)}>
+                        <SVG src={hamburger} width={24} height="auto" />
+                    </Button>
+                    <Drawer
+                        anchor={"left"}
+                        open={state["left"]}
+                        onClose={toggleDrawer("left", false)}
+                    >
+                        {list("left")}
+                    </Drawer>
+                </div>
                 <div className={classes.siteLogoContainer}>
                     <SVG src={logo} width={600} height="auto" />
                 </div>
@@ -40,7 +100,6 @@ const AppBar = (props: AppBarProps) => {
                             sm={3}
                             md={2}
                         >
-                            <SVG src={hamburger} width={24} height="auto" />
                             {/* <img src={Image} width="200px" height="70px" /> */}
                             <NavLinkButton
                                 className={classes.menuButton}
