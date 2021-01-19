@@ -13,16 +13,19 @@ var config = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(jpg|jpeg|png|gif|ico)$/,
+                test: /\.(?:png|jpg|gif|ico)$/i,
                 use: [
                     {
                         loader: "file-loader",
                         options: {
-                            name: "images/[name].[contenthash:4].[ext]",
-                            outputPath: "images/"
+                            name: "assets/[hash].[ext]"
                         }
                     }
                 ]
+            },
+            {
+                test: /\.svg$/,
+                loader: "svg-inline-loader"
             }
         ]
     },

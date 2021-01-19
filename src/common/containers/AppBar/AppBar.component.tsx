@@ -11,6 +11,9 @@ import {
 
 import NavLinkButton from "common/components/NavLinkButton/NavLinkButton.component";
 import style from "./AppBar.style";
+import SVG from "react-inlinesvg";
+import logo from "../../../assets/MarketFeels.svg";
+import hamburger from "../../../assets/hamburger.svg";
 
 interface AppBarProps {
     toggleDarkMode: any;
@@ -32,20 +35,18 @@ const AppBar = (props: AppBarProps) => {
                             sm={3}
                             md={2}
                         >
+                            <SVG src={logo} />
+                            <SVG src={hamburger} />
+                            {/* <img src={Image} width="200px" height="70px" /> */}
                             <NavLinkButton
                                 className={classes.menuButton}
                                 variant="contained"
                                 to="/"
                                 color="secondary"
                             >
-                                {/* <img
-                                        src={img}
-                                        width="200px"
-                                        height="70px"
-                                    /> */}
-                                <Typography color="textSecondary">
+                                {/* <Typography color="textSecondary">
                                     temp
-                                </Typography>
+                                </Typography> */}
                             </NavLinkButton>
                         </Grid>
                         <Grid item className={classes.menuButtonsContainer}>
