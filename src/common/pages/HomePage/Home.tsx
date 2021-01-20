@@ -16,13 +16,13 @@ interface HomeProps {
 const Home = (props: HomeProps) => {
     const { classes } = props;
     return (
-        <div className={classes.homeContainer}>
-            <Paper>
+        <React.Fragment>
+            <Paper className={classes.homeContainer}>
                 <Button color="primary">Primary</Button>
                 <Button color="secondary">Secondary</Button>
             </Paper>
             <Typography>Home page</Typography>
-        </div>
+        </React.Fragment>
     );
 };
 

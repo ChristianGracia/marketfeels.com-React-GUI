@@ -76,12 +76,13 @@ const AppBar = (props: AppBarProps) => {
         <Paper square>
             <BaseAppBar position="static" className={classes.navContainer}>
                 <Toolbar>
-                    <Grid container className={classes.gridContainer}>
+                    <Grid container className={classes.logoContainer}>
                         <Grid
                             key={"left"}
                             className={classes.hamburgerMenu}
-                            md={4}
-                            sm={2}
+                            md={8}
+                            sm={12}
+                            xs={12}
                         >
                             <Button onClick={toggleDrawer("left", true)}>
                                 <SVG src={hamburger} width={24} height="auto" />
@@ -93,9 +94,8 @@ const AppBar = (props: AppBarProps) => {
                             >
                                 {list("left")}
                             </Drawer>
-                        </Grid>
-                        <Grid md={4} sm={10}>
-                            <SVG src={logo} width={400} height="100" />
+
+                            <SVG src={logo} height="100" />
                         </Grid>
 
                         <Grid
@@ -103,6 +103,7 @@ const AppBar = (props: AppBarProps) => {
                             className={classes.menuButtonsContainer}
                             md={4}
                             sm={12}
+                            xs={12}
                         >
                             <Grid item className={classes.menuButtonContainer}>
                                 <NavLinkButton

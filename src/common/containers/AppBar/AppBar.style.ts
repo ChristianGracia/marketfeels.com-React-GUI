@@ -2,25 +2,24 @@ import { createStyles, Theme } from "@material-ui/core";
 
 const style = (theme: Theme) =>
     createStyles({
-        gridContainer: {
+        logoContainer: {
             // marginTop: 8,
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "evenly",
             alignItems: "center"
         },
-        siteLogoContainer: {
-            margin: "0 auto"
-            // [theme.breakpoints.down("xs")]: {
-            //     display: "none"
-            // }
-        },
+
         hamburgerMenu: {
             display: "flex",
-            justifyContent: "left",
-            marginTop: 10
+            justifyContent: "space-around"
+
             // [theme.breakpoints.up("sm")]: {
             //     display: "none"
             // }
+        },
+        siteLogo: {
+            display: "flex",
+            justifyContent: "flex-end"
         },
         homeButtonContainer: {},
         menuButton: { padding: 0 },
@@ -35,7 +34,8 @@ const style = (theme: Theme) =>
         },
         menuButtonsContainer: {
             display: "flex",
-            flexDirection: "row"
+            flexDirection: "row",
+            justifyContent: "flex-end"
         }
     });
 
