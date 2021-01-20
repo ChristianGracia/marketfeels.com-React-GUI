@@ -14,6 +14,7 @@ import {
     List,
     ListItem,
     ListItemIcon,
+    ListSubheader,
     ListItemText
 } from "@material-ui/core";
 
@@ -52,18 +53,77 @@ const AppBar = (props: AppBarProps) => {
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
-            <List>
-                {["Most mentions today", "Stocks", "Crypto"].map(
-                    (text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    )
-                )}
+            <List className={classes.firstList}>
+                <ListSubheader>
+                    <ListItemText
+                        disableTypography
+                        primary={
+                            <Typography className={classes.listSubheaderText}>
+                                Stocks
+                            </Typography>
+                        }
+                    />
+                </ListSubheader>
+
+                {["Home", "Most Mentions", "All Stocks"].map((text, index) => (
+                    <ListItem button key={text}>
+                        <ListItemText primary={text} />
+                    </ListItem>
+                ))}
             </List>
             <Divider />
+
             <List>
-                {["About", "Contact"].map((text, index) => (
+                <ListSubheader>
+                    <ListItemText
+                        disableTypography
+                        primary={
+                            <Typography className={classes.listSubheaderText}>
+                                Crypto
+                            </Typography>
+                        }
+                    />
+                </ListSubheader>
+                {["Coming Soon..."].map((text, index) => (
+                    <ListItem button key={text}>
+                        <ListItemText primary={text} />
+                    </ListItem>
+                ))}
+            </List>
+            <Divider />
+
+            <List>
+                <ListSubheader>
+                    <ListItemText
+                        disableTypography
+                        primary={
+                            <Typography className={classes.listSubheaderText}>
+                                Account
+                            </Typography>
+                        }
+                    />
+                </ListSubheader>
+                {["Preferences", "Sign In"].map((text, index) => (
+                    <ListItem button key={text}>
+                        <ListItemText primary={text} />
+                    </ListItem>
+                ))}
+            </List>
+
+            <Divider />
+
+            <List>
+                <ListSubheader>
+                    <ListItemText
+                        disableTypography
+                        primary={
+                            <Typography className={classes.listSubheaderText}>
+                                About
+                            </Typography>
+                        }
+                    />
+                </ListSubheader>
+                {["About this site", "Privacy"].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemText primary={text} />
                     </ListItem>
@@ -96,7 +156,7 @@ const AppBar = (props: AppBarProps) => {
                                 {list("left")}
                             </Drawer>
 
-                            <SVG src={logo} height="100" />
+                            <SVG src={logo} height="auto" />
                         </Grid>
 
                         <Grid
@@ -136,7 +196,7 @@ const AppBar = (props: AppBarProps) => {
                                     className={classes.menuButton}
                                     to="/"
                                 >
-                                    <Typography>Contact</Typography>
+                                    <Typography>Account</Typography>
                                 </NavLinkButton>
                             </Grid>
                         </Grid>

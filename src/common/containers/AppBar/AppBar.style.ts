@@ -31,6 +31,13 @@ const style = (theme: Theme) =>
             display: "flex",
             flexDirection: "row",
             justifyContent: "flex-end"
+        },
+        listSubheaderText: {
+            fontWeight: "bold",
+            fontSize: 17
+        },
+        firstList: {
+            marginTop: 20
         }
     });
 
