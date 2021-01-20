@@ -76,10 +76,11 @@ const AppBar = (props: AppBarProps) => {
         <Paper square>
             <BaseAppBar position="static" className={classes.navContainer}>
                 <Toolbar>
-                    <Grid container className={classes.logoContainer}>
+                    <Grid container className={classes.gridContainer}>
                         <Grid
                             key={"left"}
-                            className={classes.hamburgerMenu}
+                            className={classes.menuLogoContainer}
+                            xl={7}
                             md={8}
                             sm={12}
                             xs={12}
@@ -101,6 +102,7 @@ const AppBar = (props: AppBarProps) => {
                         <Grid
                             item
                             className={classes.menuButtonsContainer}
+                            xl={5}
                             md={4}
                             sm={12}
                             xs={12}

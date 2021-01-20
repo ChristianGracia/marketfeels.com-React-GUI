@@ -2,20 +2,15 @@ import { createStyles, Theme } from "@material-ui/core";
 
 const style = (theme: Theme) =>
     createStyles({
-        logoContainer: {
-            // marginTop: 8,
+        gridContainer: {
             display: "flex",
             justifyContent: "evenly",
             alignItems: "center"
         },
 
-        hamburgerMenu: {
+        menuLogoContainer: {
             display: "flex",
-            justifyContent: "space-around"
-
-            // [theme.breakpoints.up("sm")]: {
-            //     display: "none"
-            // }
+            justifyContent: "space-between"
         },
         siteLogo: {
             display: "flex",
