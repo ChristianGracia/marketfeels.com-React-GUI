@@ -6,8 +6,10 @@ import About from "common/pages/AboutPage/About";
 import Profile from "common/pages/ProfilePage/Profile";
 import SignUp from "common/pages/SignUpPage/SignUp";
 import Login from "common/pages/LoginPage/Login";
-import StocksMain from "common/pages/StockPages/MainPage/StocksMain";
-import CryptoMain from "common/pages/CryptoPages/MainPage/CryptoMain";
+import StocksMain from "common/pages/StockPages/Main/StocksMain";
+import StockMostMentions from "common/pages/StockPages/StockMostMentions/StockMostMentions";
+import AllStocks from "common/pages/StockPages/AllStocks/AllStocks";
+import CryptoMain from "common/pages/CryptoPages/Main/CryptoMain";
 
 import AppBar from "common/containers/AppBar/AppBar.component";
 import {
@@ -81,9 +83,9 @@ const App = () => {
                     <Route
                         exact
                         path="/stocks/most-mentions"
-                        component={Home}
+                        component={StockMostMentions}
                     />
-                    {/* <Route exact path="/" component={Home} /> */}
+                    <Route exact path="/stocks/all" component={AllStocks} />
                     <Route exact path="/about" component={About} />
                 </Switch>
             </MuiThemeProvider>

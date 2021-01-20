@@ -5,20 +5,20 @@ import { Typography, Paper, Button, withStyles } from "@material-ui/core";
 
 import { Store } from "common/redux/store";
 
-import style from "./CryptoMainPage.style";
+import style from "./AllStocksPage.style";
 
-interface CryptoMainProps {
+interface AllStocksProps {
     title: string;
     updateTitle: any;
     classes: any;
 }
 
-const CryptoMain = (props: CryptoMainProps) => {
+const AllStocks = (props: AllStocksProps) => {
     const { classes } = props;
     return (
         <React.Fragment>
-            <Paper className={classes.cyptoMainContainer}></Paper>
-            <Typography>CryptoMain page</Typography>
+            <Paper className={classes.allStocksContainer}></Paper>
+            <Typography>AllStocks page</Typography>
         </React.Fragment>
     );
 };
@@ -32,4 +32,4 @@ const mapDispatchToProps = {};
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(withStyles(style)(CryptoMain));
+)(withStyles(style)(AllStocks));
