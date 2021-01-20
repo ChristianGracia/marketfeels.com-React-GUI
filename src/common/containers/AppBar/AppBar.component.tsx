@@ -5,16 +5,12 @@ import {
     Grid,
     Toolbar,
     withStyles,
-    FormControlLabel,
-    Switch,
-    Paper,
     Button,
     Drawer,
     Divider,
     List,
     Link,
     ListItem,
-    ListItemIcon,
     ListSubheader,
     ListItemText
 } from "@material-ui/core";
@@ -181,14 +177,13 @@ const AppBar = (props: AppBarProps) => {
                         </Grid>
 
                         <Grid
-                            item
                             className={classes.menuButtonsContainer}
                             xl={5}
                             md={4}
                             sm={12}
                             xs={12}
                         >
-                            <Grid item className={classes.menuButtonContainer}>
+                            <Grid className={classes.menuButtonContainer}>
                                 <NavLinkButton
                                     className={classes.menuButton}
                                     to="/stocks"
@@ -196,7 +191,7 @@ const AppBar = (props: AppBarProps) => {
                                     <Typography>Stocks</Typography>
                                 </NavLinkButton>
                             </Grid>
-                            <Grid item className={classes.menuButtonContainer}>
+                            <Grid className={classes.menuButtonContainer}>
                                 <NavLinkButton
                                     className={classes.menuButton}
                                     to="/crypto"
@@ -204,20 +199,20 @@ const AppBar = (props: AppBarProps) => {
                                     <Typography>Crypto</Typography>
                                 </NavLinkButton>
                             </Grid>
-                            <Grid item className={classes.menuButtonContainer}>
-                                <NavLinkButton
-                                    className={classes.menuButton}
-                                    to="/about"
-                                >
-                                    <Typography>About</Typography>
-                                </NavLinkButton>
-                            </Grid>
-                            <Grid item className={classes.menuButtonContainer}>
+                            <Grid className={classes.menuButtonContainer}>
                                 <NavLinkButton
                                     className={classes.menuButton}
                                     to="/login"
                                 >
                                     <Typography>Account</Typography>
+                                </NavLinkButton>
+                            </Grid>
+                             <Grid className={classes.menuButtonContainer}>
+                                <NavLinkButton
+                                    className={classes.menuButton}
+                                    to="/about"
+                                >
+                                    <Typography>About</Typography>
                                 </NavLinkButton>
                             </Grid>
                             {/* <Switch onClick={props.toggleDarkMode} /> */}
