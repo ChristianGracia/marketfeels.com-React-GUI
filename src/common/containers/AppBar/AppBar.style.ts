@@ -9,18 +9,18 @@ const style = (theme: Theme) =>
             alignItems: "center"
         },
         siteLogoContainer: {
-            margin: "0 auto",
-            [theme.breakpoints.down("xs")]: {
-                display: "none"
-            }
+            margin: "0 auto"
+            // [theme.breakpoints.down("xs")]: {
+            //     display: "none"
+            // }
         },
         hamburgerMenu: {
             display: "flex",
             justifyContent: "left",
-            marginTop: 10,
-            [theme.breakpoints.up("sm")]: {
-                display: "none"
-            }
+            marginTop: 10
+            // [theme.breakpoints.up("sm")]: {
+            //     display: "none"
+            // }
         },
         homeButtonContainer: {},
         menuButton: { padding: 0 },

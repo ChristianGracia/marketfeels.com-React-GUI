@@ -75,44 +75,35 @@ const AppBar = (props: AppBarProps) => {
     return (
         <Paper square>
             <BaseAppBar position="static" className={classes.navContainer}>
-                <div key={"left"} className={classes.hamburgerMenu}>
-                    <Button onClick={toggleDrawer("left", true)}>
-                        <SVG src={hamburger} width={24} height="auto" />
-                    </Button>
-                    <Drawer
-                        anchor={"left"}
-                        open={state["left"]}
-                        onClose={toggleDrawer("left", false)}
-                    >
-                        {list("left")}
-                    </Drawer>
-                </div>
-                <div className={classes.siteLogoContainer}>
-                    <SVG src={logo} width={600} height="auto" />
-                </div>
-
                 <Toolbar>
                     <Grid container className={classes.gridContainer}>
                         <Grid
-                            item
-                            className={classes.homeButtonContainer}
-                            xs={6}
-                            sm={3}
-                            md={2}
+                            key={"left"}
+                            className={classes.hamburgerMenu}
+                            md={4}
+                            sm={2}
                         >
-                            {/* <img src={Image} width="200px" height="70px" /> */}
-                            <NavLinkButton
-                                className={classes.menuButton}
-                                variant="contained"
-                                to="/"
-                                color="secondary"
+                            <Button onClick={toggleDrawer("left", true)}>
+                                <SVG src={hamburger} width={24} height="auto" />
+                            </Button>
+                            <Drawer
+                                anchor={"left"}
+                                open={state["left"]}
+                                onClose={toggleDrawer("left", false)}
                             >
-                                {/* <Typography color="textSecondary">
-                                    temp
-                                </Typography> */}
-                            </NavLinkButton>
+                                {list("left")}
+                            </Drawer>
                         </Grid>
-                        <Grid item className={classes.menuButtonsContainer}>
+                        <Grid md={4} sm={10}>
+                            <SVG src={logo} width={400} height="100" />
+                        </Grid>
+
+                        <Grid
+                            item
+                            className={classes.menuButtonsContainer}
+                            md={4}
+                            sm={12}
+                        >
                             <Grid item className={classes.menuButtonContainer}>
                                 <NavLinkButton
                                     className={classes.menuButton}
@@ -146,7 +137,7 @@ const AppBar = (props: AppBarProps) => {
                                 </NavLinkButton>
                             </Grid>
                         </Grid>
-                        <Grid item className={classes.socialMediaContainer}>
+                        {/* <Grid item className={classes.socialMediaContainer}>
                             <Grid item className={classes.menuButtonContainer}>
                                 <NavLinkButton
                                     className={classes.menuButton}
@@ -162,7 +153,7 @@ const AppBar = (props: AppBarProps) => {
                                     ></FormControlLabel>
                                 </NavLinkButton>
                             </Grid>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </Toolbar>
             </BaseAppBar>

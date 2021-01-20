@@ -1,15 +1,13 @@
 import * as React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Home from "common/pages/Home";
+import Home from "common/pages/HomePage/Home";
 
 import AppBar from "common/containers/AppBar/AppBar.component";
 import {
-    Button,
     createMuiTheme,
     MuiThemeProvider,
-    PaletteType,
-    Paper
+    PaletteType
 } from "@material-ui/core";
 import { useState } from "react";
 import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
@@ -65,10 +63,6 @@ const App = () => {
         <React.Fragment>
             <MuiThemeProvider theme={themeConfig} sheetsManager={sheetsManager}>
                 <AppBar toggleDarkMode={toggleDarkMode} />
-                <Paper>
-                    <Button color="primary">Primary</Button>
-                    <Button color="secondary">Secondary</Button>
-                </Paper>
 
                 <Switch>
                     <Route exact path="/" component={Home} />
