@@ -12,6 +12,7 @@ import {
     Drawer,
     Divider,
     List,
+    Link,
     ListItem,
     ListItemIcon,
     ListSubheader,
@@ -64,12 +65,21 @@ const AppBar = (props: AppBarProps) => {
                         }
                     />
                 </ListSubheader>
-
-                {["Home", "Most Mentions", "All Stocks"].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <ListItem>
+                    <Link href="/stocks" color="inherit">
+                        <ListItemText primary={"Home"} />
+                    </Link>
+                </ListItem>
+                <ListItem>
+                    <Link href="/stocks/most-mentions" color="inherit">
+                        <ListItemText primary={"Most Mentions"} />
+                    </Link>
+                </ListItem>
+                <ListItem>
+                    <Link href="/stocks/all" color="inherit">
+                        <ListItemText primary={"All Stocks"} />
+                    </Link>
+                </ListItem>
             </List>
             <Divider />
 
@@ -84,11 +94,12 @@ const AppBar = (props: AppBarProps) => {
                         }
                     />
                 </ListSubheader>
-                {["Coming Soon..."].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+
+                <ListItem>
+                    <Link href="/crypto" color="inherit">
+                        <ListItemText primary={"Coming Soon..."} />
+                    </Link>
+                </ListItem>
             </List>
             <Divider />
 
@@ -103,11 +114,16 @@ const AppBar = (props: AppBarProps) => {
                         }
                     />
                 </ListSubheader>
-                {["Preferences", "Sign In"].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <ListItem>
+                    <Link href="/profile" color="inherit">
+                        <ListItemText primary={"Preferences"} />
+                    </Link>{" "}
+                </ListItem>
+                <ListItem>
+                    <Link href="/signup" color="inherit">
+                        <ListItemText primary={"Sign Up"} />
+                    </Link>{" "}
+                </ListItem>
             </List>
 
             <Divider />
@@ -123,11 +139,16 @@ const AppBar = (props: AppBarProps) => {
                         }
                     />
                 </ListSubheader>
-                {["About this site", "Privacy"].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <ListItem>
+                    <Link href="/about" color="inherit">
+                        <ListItemText primary={"About Site"} />
+                    </Link>
+                </ListItem>
+                <ListItem>
+                    <Link href="/privacy" color="inherit">
+                        <ListItemText primary={"Privacy Policy"} />
+                    </Link>
+                </ListItem>
             </List>
         </div>
     );
@@ -170,7 +191,7 @@ const AppBar = (props: AppBarProps) => {
                             <Grid item className={classes.menuButtonContainer}>
                                 <NavLinkButton
                                     className={classes.menuButton}
-                                    to="/"
+                                    to="/stocks"
                                 >
                                     <Typography>Stocks</Typography>
                                 </NavLinkButton>
@@ -178,7 +199,7 @@ const AppBar = (props: AppBarProps) => {
                             <Grid item className={classes.menuButtonContainer}>
                                 <NavLinkButton
                                     className={classes.menuButton}
-                                    to="/"
+                                    to="/crypto"
                                 >
                                     <Typography>Crypto</Typography>
                                 </NavLinkButton>
@@ -186,7 +207,7 @@ const AppBar = (props: AppBarProps) => {
                             <Grid item className={classes.menuButtonContainer}>
                                 <NavLinkButton
                                     className={classes.menuButton}
-                                    to="/"
+                                    to="/about"
                                 >
                                     <Typography>About</Typography>
                                 </NavLinkButton>
@@ -194,7 +215,7 @@ const AppBar = (props: AppBarProps) => {
                             <Grid item className={classes.menuButtonContainer}>
                                 <NavLinkButton
                                     className={classes.menuButton}
-                                    to="/"
+                                    to="/login"
                                 >
                                     <Typography>Account</Typography>
                                 </NavLinkButton>
