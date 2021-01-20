@@ -1,7 +1,7 @@
 import { createStyles } from "@material-ui/core";
 
 const style = createStyles({
-    stocksMainContainer: {}
+    cryptoMainContainer: {}
 });
 
 export default style;
