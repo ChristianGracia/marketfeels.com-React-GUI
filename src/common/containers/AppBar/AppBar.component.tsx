@@ -156,7 +156,7 @@ const AppBar = (props: AppBarProps) => {
                                 {list("left")}
                             </Drawer>
 
-                            <SVG src={logo} height="auto" />
+                            <SVG src={logo} height="100" />
                         </Grid>
 
                         <Grid

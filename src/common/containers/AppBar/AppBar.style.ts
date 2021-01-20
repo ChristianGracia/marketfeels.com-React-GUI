@@ -1,5 +1,9 @@
 import { createStyles, Theme } from "@material-ui/core";
 
+// [theme.breakpoints.down("lg")]: {
+//     justifyContent: "center"
+// }
+
 const style = (theme: Theme) =>
     createStyles({
         gridContainer: {
@@ -11,10 +15,6 @@ const style = (theme: Theme) =>
         menuLogoContainer: {
             display: "flex",
             justifyContent: "space-between"
-        },
-        siteLogo: {
-            display: "flex",
-            justifyContent: "flex-end"
         },
         homeButtonContainer: {},
         menuButton: { padding: 0 },
@@ -30,7 +30,10 @@ const style = (theme: Theme) =>
         menuButtonsContainer: {
             display: "flex",
             flexDirection: "row",
-            justifyContent: "flex-end"
+            justifyContent: "flex-end",
+            [theme.breakpoints.down("lg")]: {
+                justifyContent: "center"
+            }
         },
         listSubheaderText: {
             fontWeight: "bold",
