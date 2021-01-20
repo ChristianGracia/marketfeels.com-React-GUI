@@ -6,6 +6,7 @@ import About from "common/pages/AboutPage/About";
 import Profile from "common/pages/ProfilePage/Profile";
 import SignUp from "common/pages/SignUpPage/SignUp";
 import Login from "common/pages/LoginPage/Login";
+import Privacy from "common/pages/PrivacyPage/Privacy";
 import StocksMain from "common/pages/StockPages/Main/StocksMain";
 import StockMostMentions from "common/pages/StockPages/StockMostMentions/StockMostMentions";
 import AllStocks from "common/pages/StockPages/AllStocks/AllStocks";
@@ -74,11 +75,10 @@ const App = () => {
 
                 <Switch>
                     <Route exact path="/" component={Home} />
-
-                    <Route exact path="/stocks" component={StocksMain} />
-                    <Route exact path="/crypto" component={CryptoMain} />
                     <Route exact path="/signup" component={SignUp} />
                     <Route exact path="/login" component={Login} />
+                    <Route exact path="/stocks" component={StocksMain} />
+                    <Route exact path="/crypto" component={CryptoMain} />
                     <Route exact path="/profile" component={Profile} />
                     <Route
                         exact
@@ -87,6 +87,7 @@ const App = () => {
                     />
                     <Route exact path="/stocks/all" component={AllStocks} />
                     <Route exact path="/about" component={About} />
+                    <Route exact path="/privacy" component={Privacy} />
                 </Switch>
             </MuiThemeProvider>
         </React.Fragment>
