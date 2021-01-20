@@ -5,8 +5,7 @@ const style = createStyles({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        flexDirection: "column",
-        height: "100%"
+        flexDirection: "column"
     },
     formField: {
         width: 280,

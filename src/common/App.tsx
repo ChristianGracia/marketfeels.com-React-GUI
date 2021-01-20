@@ -16,7 +16,8 @@ import AppBar from "common/containers/AppBar/AppBar.component";
 import {
     createMuiTheme,
     MuiThemeProvider,
-    PaletteType
+    PaletteType,
+    Paper
 } from "@material-ui/core";
 import { useState } from "react";
 import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
@@ -71,24 +72,26 @@ const App = () => {
     return (
         <React.Fragment>
             <MuiThemeProvider theme={themeConfig} sheetsManager={sheetsManager}>
-                <AppBar toggleDarkMode={toggleDarkMode} />
+                <Paper>
+                    <AppBar toggleDarkMode={toggleDarkMode} />
 
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/signup" component={SignUp} />
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/stocks" component={StocksMain} />
-                    <Route exact path="/crypto" component={CryptoMain} />
-                    <Route exact path="/profile" component={Profile} />
-                    <Route
-                        exact
-                        path="/stocks/most-mentions"
-                        component={StockMostMentions}
-                    />
-                    <Route exact path="/stocks/all" component={AllStocks} />
-                    <Route exact path="/about" component={About} />
-                    <Route exact path="/privacy" component={Privacy} />
-                </Switch>
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/signup" component={SignUp} />
+                        <Route exact path="/login" component={Login} />
+                        <Route exact path="/stocks" component={StocksMain} />
+                        <Route exact path="/crypto" component={CryptoMain} />
+                        <Route exact path="/profile" component={Profile} />
+                        <Route
+                            exact
+                            path="/stocks/most-mentions"
+                            component={StockMostMentions}
+                        />
+                        <Route exact path="/stocks/all" component={AllStocks} />
+                        <Route exact path="/about" component={About} />
+                        <Route exact path="/privacy" component={Privacy} />
+                    </Switch>
+                </Paper>
             </MuiThemeProvider>
         </React.Fragment>
     );

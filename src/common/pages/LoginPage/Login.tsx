@@ -51,10 +51,19 @@ const Login = (props: LoginProps) => {
     const handleMouseDownPassword = (event: any) => {
         event.preventDefault();
     };
+
+    const handleSubmit = () => {
+        const credentials = {
+            user: values["username"],
+            password: values["password"]
+        };
+        console.log(credentials);
+    };
+
     return (
         <React.Fragment>
-            <Paper className={classes.loginContainer}>
-                <Typography>Login page</Typography>
+            <div className={classes.loginContainer}>
+                <Typography variant="h3">Account Login</Typography>
                 <FormControl className={classes.formField}>
                     <InputLabel htmlFor="user">Username</InputLabel>
                     <Input
@@ -96,7 +105,8 @@ const Login = (props: LoginProps) => {
                         }
                     />
                 </FormControl>
-            </Paper>
+                <Button onClick={handleSubmit}>Submit</Button>
+            </div>
         </React.Fragment>
     );
 };

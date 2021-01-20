@@ -154,7 +154,7 @@ const AppBar = (props: AppBarProps) => {
     );
 
     return (
-        <Paper square>
+        <React.Fragment>
             <BaseAppBar position="static" className={classes.navContainer}>
                 <Toolbar>
                     <Grid container className={classes.gridContainer}>
@@ -220,28 +220,12 @@ const AppBar = (props: AppBarProps) => {
                                     <Typography>Account</Typography>
                                 </NavLinkButton>
                             </Grid>
+                            {/* <Switch onClick={props.toggleDarkMode} /> */}
                         </Grid>
-                        {/* <Grid item className={classes.socialMediaContainer}>
-                            <Grid item className={classes.menuButtonContainer}>
-                                <NavLinkButton
-                                    className={classes.menuButton}
-                                    to="/"
-                                >
-                                    <FormControlLabel
-                                        label="dark mode"
-                                        control={
-                                            <Switch
-                                                onClick={props.toggleDarkMode}
-                                            />
-                                        }
-                                    ></FormControlLabel>
-                                </NavLinkButton>
-                            </Grid>
-                        </Grid> */}
                     </Grid>
                 </Toolbar>
             </BaseAppBar>
-        </Paper>
+        </React.Fragment>
     );
 };
 
