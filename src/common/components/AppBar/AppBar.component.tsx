@@ -15,7 +15,7 @@ import {
     ListItemText
 } from "@material-ui/core";
 
-import NavLinkButton from "common/components/NavLinkButton/NavLinkButton.component";
+import NavLinkButton from "common/containers/AppBar/NavLinkButton/NavLinkButton.component";
 import style from "./AppBar.style";
 import SVG from "react-inlinesvg";
 import logo from "../../../assets/MarketFeels.svg";

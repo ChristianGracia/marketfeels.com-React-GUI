@@ -24,11 +24,15 @@ import eye from "../../../assets/eye.svg";
 import eyeSlashed from "../../../assets/eye-slashed.svg";
 
 import SVG from "react-inlinesvg";
+import { useHistory } from "react-router";
+import { RouteComponentProps } from "react-router-dom";
+import axios from "axios";
 
 interface LoginProps {
     title: string;
     updateTitle: any;
     classes: any;
+    history: any;
 }
 
 const Login = (props: LoginProps) => {
@@ -58,6 +62,17 @@ const Login = (props: LoginProps) => {
             password: values["password"]
         };
         console.log(credentials);
+
+        const endpoint = "";
+
+        axios.post(endpoint, credentials).then((res) => {
+            if (res.data === "success") {
+                localStorage.setItem("authorization", res.data.token);
+                props.history.push("/profile");
+            } else {
+                alert("Auth failed");
+            }
+        });
     };
 
     return (
