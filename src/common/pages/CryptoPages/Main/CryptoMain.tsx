@@ -7,8 +7,6 @@ import style from "./CryptoMainPage.style";
 import { Store } from "redux";
 
 interface CryptoMainProps {
-    title: string;
-    updateTitle: any;
     classes: any;
 }
 

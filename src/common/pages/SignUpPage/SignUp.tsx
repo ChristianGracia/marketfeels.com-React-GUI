@@ -25,8 +25,6 @@ import SVG from "react-inlinesvg";
 import { Store } from "redux";
 
 interface SignUpProps {
-    title: string;
-    updateTitle: any;
     classes: any;
 }
 

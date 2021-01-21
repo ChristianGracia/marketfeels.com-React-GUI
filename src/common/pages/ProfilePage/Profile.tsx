@@ -7,8 +7,6 @@ import style from "./ProfilePage.style";
 import { Store } from "redux";
 
 interface ProfileProps {
-    title: string;
-    updateTitle: any;
     classes: any;
 }
 

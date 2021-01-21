@@ -7,8 +7,6 @@ import style from "./StockMostMentionsPage.style";
 import { Store } from "redux";
 
 interface StockMostMentionsProps {
-    title: string;
-    updateTitle: any;
     classes: any;
 }
 

@@ -7,8 +7,6 @@ import style from "./PrivacyPage.style";
 import { Store } from "redux";
 
 interface PrivacyProps {
-    title: string;
-    updateTitle: any;
     classes: any;
 }
 

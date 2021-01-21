@@ -7,8 +7,6 @@ import style from "./AboutPage.style";
 import { Store } from "redux";
 
 interface AboutProps {
-    title: string;
-    updateTitle: any;
     classes: any;
 }
 

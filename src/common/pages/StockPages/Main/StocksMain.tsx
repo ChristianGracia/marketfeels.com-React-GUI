@@ -7,8 +7,6 @@ import style from "./StocksMainPage.style";
 import { Store } from "redux";
 
 interface StocksMainProps {
-    title: string;
-    updateTitle: any;
     classes: any;
 }
 

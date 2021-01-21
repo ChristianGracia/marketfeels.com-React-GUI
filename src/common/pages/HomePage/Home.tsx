@@ -7,8 +7,6 @@ import style from "./HomePage.style";
 import { Store } from "redux";
 
 interface HomeProps {
-    title: string;
-    updateTitle: any;
     classes: any;
 }
 
