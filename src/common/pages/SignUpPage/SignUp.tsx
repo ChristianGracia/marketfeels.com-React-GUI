@@ -89,13 +89,13 @@ const SignUp = (props: SignUpProps) => {
                                         <SVG
                                             src={eye}
                                             width={24}
-                                            height="auto"
+                                            height="100%"
                                         />
                                     ) : (
                                         <SVG
                                             src={eyeSlashed}
                                             width={24}
-                                            height="auto"
+                                            height="100%"
                                         />
                                     )}
                                 </IconButton>
