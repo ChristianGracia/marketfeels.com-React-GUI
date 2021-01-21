@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 
 import { Typography, Paper, Button, withStyles } from "@material-ui/core";
 
-import { Store } from "common/redux/store";
-
 import style from "./ProfilePage.style";
+import { Store } from "redux";
 
 interface ProfileProps {
     title: string;

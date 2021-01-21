@@ -12,8 +12,7 @@ import {
 } from "@material-ui/core/styles";
 
 import App from "common/App";
-// import theme from "common/theme";
-import { changeTitle } from "common/redux/reducers/title";
+import { store } from "common/redux/store";
 
 declare const module: any;
 
@@ -24,9 +23,7 @@ function main() {
     express.use(Express.static("build"));
 
     express.get("/*", (req, res, next) => {
-        const store = Redux.createStore(changeTitle);
         const sheetsRegistry = new SheetsRegistry();
-        const sheetsManager = new Map();
 
         const appHTML = ReactDOM.renderToString(
             <ReduxProvider store={store}>
@@ -35,12 +32,7 @@ function main() {
                         registry={sheetsRegistry}
                         generateClassName={createGenerateClassName()}
                     >
-                        {/* <MuiThemeProvider
-                            theme={theme}
-                            sheetsManager={sheetsManager}
-                        > */}
                         <App />
-                        {/* </MuiThemeProvider> */}
                     </JssProvider>
                 </Router>
             </ReduxProvider>

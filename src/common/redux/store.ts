@@ -1,7 +1,13 @@
-export type Store = {
-    title: string;
-};
+import { configureStore } from "@reduxjs/toolkit";
+import thunk from "redux-thunk";
 
-export const initialState: Store = {
-    title: "marketfeelings.com"
-};
+import rootReducer from "./reducers";
+
+const middleware = [thunk];
+
+const store = configureStore({
+    reducer: rootReducer,
+    middleware
+});
+
+export { store };

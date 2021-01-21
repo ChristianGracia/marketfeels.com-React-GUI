@@ -15,8 +15,6 @@ import {
     IconButton
 } from "@material-ui/core";
 
-import { Store } from "common/redux/store";
-
 import style from "./SignUpPage.style";
 
 import user from "../../../assets/user.svg";
@@ -24,6 +22,7 @@ import eye from "../../../assets/eye.svg";
 import eyeSlashed from "../../../assets/eye-slashed.svg";
 
 import SVG from "react-inlinesvg";
+import { Store } from "redux";
 
 interface SignUpProps {
     title: string;

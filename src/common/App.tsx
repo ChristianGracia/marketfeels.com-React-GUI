@@ -12,7 +12,7 @@ import StockMostMentions from "common/pages/StockPages/StockMostMentions/StockMo
 import AllStocks from "common/pages/StockPages/AllStocks/AllStocks";
 import CryptoMain from "common/pages/CryptoPages/Main/CryptoMain";
 
-import AppBar from "common/containers/AppBar/AppBar.component";
+import AppBar from "common/components/AppBar/AppBar.component";
 import {
     createMuiTheme,
     MuiThemeProvider,

@@ -15,8 +15,6 @@ import {
     IconButton
 } from "@material-ui/core";
 
-import { Store } from "common/redux/store";
-
 import style from "./LoginPage.style";
 
 import user from "../../../assets/user.svg";
@@ -27,6 +25,7 @@ import SVG from "react-inlinesvg";
 import { useHistory } from "react-router";
 import { RouteComponentProps } from "react-router-dom";
 import axios from "axios";
+import { Store } from "redux";
 
 interface LoginProps {
     title: string;

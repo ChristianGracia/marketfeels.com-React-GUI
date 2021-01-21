@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 
 import { Typography, Paper, Button, withStyles } from "@material-ui/core";
 
-import { Store } from "common/redux/store";
-
 import style from "./StockMostMentionsPage.style";
+import { Store } from "redux";
 
 interface StockMostMentionsProps {
     title: string;
