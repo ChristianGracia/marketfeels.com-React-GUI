@@ -12,6 +12,7 @@ const setUser = (user: User) => (dispatch: any) => {
 };
 
 const login = (email: string, password: string) => (dispatch: any) => {
+    console.log("hi");
     dispatch(loginAttempt());
 
     dispatch(loginSuccess());

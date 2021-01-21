@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
-
+import logger from "redux-logger";
 import rootReducer from "./reducers";
 
-const middleware = [thunk];
+const middleware = [thunk, logger];
 
 const store = configureStore({
     reducer: rootReducer,

@@ -19,13 +19,17 @@ import eyeSlashed from "../../../assets/eye-slashed.svg";
 
 import SVG from "react-inlinesvg";
 import axios from "axios";
-import { Dispatch, Store } from "redux";
+import { compose, Store } from "redux";
 import { login } from "common/redux/actions/AuthActions";
 
 interface LoginProps {
     login: (email: string, password: string) => void;
     classes: any;
     history: any;
+    loginAttempt: boolean;
+    loginSuccess: boolean;
+    loginError: boolean;
+    loginErrorMessage: string;
 }
 
 const Login = (props: LoginProps) => {
@@ -57,6 +61,7 @@ const Login = (props: LoginProps) => {
         console.log(credentials);
 
         const endpoint = "";
+        console.log(props.login);
         props.login("cg", "cg");
 
         // axios.post(endpoint, credentials).then((res) => {
@@ -120,16 +125,26 @@ const Login = (props: LoginProps) => {
     );
 };
 
-const mapStateToProps = (state: Store) => {
-    return {};
+const mapStateToProps = (state: any) => {
+    return {
+        loginAttempt: state.AuthReducer.loginAttempt,
+        loginSuccess: state.AuthReducer.loginSuccess,
+        loginError: state.AuthReducer.loginError,
+        loginErrorMessage: state.AuthReducer.loginErrorMessage
+    };
 };
 
-const mapDispatchToProps = (dispatch: any) => {
-    login: (email: string, password: string) =>
-        dispatch(login(email, password));
-};
+// const mapDispatchToProps = (dispatch: any) => {
+//     login: (email: string, password: string) => {
+//         dispatch(login(email, password));
+//     };
+// };
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(withStyles(style)(Login));
+const mapDispatchToProps = (dispatch: any) => ({
+    login: (email: string, password: string) => dispatch(login(email, password))
+});
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withStyles(style)
+)(Login);
