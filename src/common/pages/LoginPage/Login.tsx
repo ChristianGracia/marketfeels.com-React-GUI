@@ -3,11 +3,8 @@ import { connect } from "react-redux";
 
 import {
     Typography,
-    Paper,
     Button,
     withStyles,
-    TextField,
-    Grid,
     InputAdornment,
     FormControl,
     InputLabel,
@@ -17,19 +14,16 @@ import {
 
 import style from "./LoginPage.style";
 
-import user from "../../../assets/user.svg";
 import eye from "../../../assets/eye.svg";
 import eyeSlashed from "../../../assets/eye-slashed.svg";
 
 import SVG from "react-inlinesvg";
-import { useHistory } from "react-router";
-import { RouteComponentProps } from "react-router-dom";
 import axios from "axios";
-import { Store } from "redux";
+import { Dispatch, Store } from "redux";
+import { login } from "common/redux/actions/AuthActions";
 
 interface LoginProps {
-    title: string;
-    updateTitle: any;
+    login: (email: string, password: string) => void;
     classes: any;
     history: any;
 }
@@ -63,15 +57,16 @@ const Login = (props: LoginProps) => {
         console.log(credentials);
 
         const endpoint = "";
+        props.login("cg", "cg");
 
-        axios.post(endpoint, credentials).then((res) => {
-            if (res.data === "success") {
-                localStorage.setItem("authorization", res.data.token);
-                props.history.push("/profile");
-            } else {
-                alert("Auth failed");
-            }
-        });
+        // axios.post(endpoint, credentials).then((res) => {
+        //     if (res.data === "success") {
+        //         localStorage.setItem("authorization", res.data.token);
+        //         props.history.push("/profile");
+        //     } else {
+        //         alert("Auth failed");
+        //     }
+        // });
     };
 
     return (
@@ -129,7 +124,10 @@ const mapStateToProps = (state: Store) => {
     return {};
 };
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = (dispatch: any) => {
+    login: (email: string, password: string) =>
+        dispatch(login(email, password));
+};
 
 export default connect(
     mapStateToProps,
