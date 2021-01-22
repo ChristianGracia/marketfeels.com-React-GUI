@@ -22,15 +22,15 @@ cd into the repo
 
 build container
 
-docker build -t {bucket_name}/{container_name}:v{version_number}
+tag
 
-ex
+`docker tag front-end us.gcr.io/marketfeels/front-end:latest`
 
-`docker build -t gcr.io/ceremonial-rush-301604/client:v3 .`
+push to google cloud registry
 
+docker host/project-id/container name
 
-push container to google gcr
+`docker push us.gcr.io/marketfeels/front-end`
 
-`docker push gcr.io/ceremonial-rush-301604/client:v3`
 
 
