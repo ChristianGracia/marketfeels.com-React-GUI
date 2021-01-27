@@ -134,12 +134,6 @@ const mapStateToProps = (state: any) => {
     };
 };
 
-// const mapDispatchToProps = (dispatch: any) => {
-//     login: (email: string, password: string) => {
-//         dispatch(login(email, password));
-//     };
-// };
-
 const mapDispatchToProps = (dispatch: any) => ({
     login: (email: string, password: string) => dispatch(login(email, password))
 });
