@@ -7,6 +7,9 @@ RUN npm install
 
 COPY . .
 
+ARG REACT_APP_DEBUG
+ENV REACT_APP_DEBUG=$REACT_APP_DEBUG
+
 RUN npm run build
 
 EXPOSE 3000

@@ -14,8 +14,10 @@ const CryptoMain = (props: CryptoMainProps) => {
     const axios = require("axios");
 
     const backendCheck = async () => {
+        const { REACT_APP_FINN_API_KEY } = process.env;
+        console.log("key : " + REACT_APP_FINN_API_KEY);
         const data = await fetch(
-            "https://finnhub.io/api/v1/search?q=apple&token=c08ci6748v6plm1eln5g"
+            `https://finnhub.io/api/v1/search?q=apple&token=${REACT_APP_FINN_API_KEY}`
         );
 
         const filteredData = await data.json();

@@ -16,14 +16,19 @@ import { store } from "common/redux/store";
 
 declare const module: any;
 
+require("dotenv").config();
+
 function main() {
     const express = Express();
     const port = process.env.PORT || 3000;
+
+    console.log(process.env.REACT_APP_FINN_API_KEY);
 
     express.use(Express.static("build"));
 
     express.get("/*", (req, res, next) => {
         const sheetsRegistry = new SheetsRegistry();
+        console.log(process.env.REACT_APP_JAVA_API_URL);
 
         const appHTML = ReactDOM.renderToString(
             <ReduxProvider store={store}>
