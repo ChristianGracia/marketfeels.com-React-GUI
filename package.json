@@ -10,8 +10,7 @@
         "start": "node build/server.js",
         "dev": "npm run build-dev && npm run start-dev",
         "clean": "rm -rf build",
-        "heroku-prebuild": "npm install --dev",
-        "postinstall": "npm run build"
+        "postinstall": "node ./ops/heroku-build.ts"
     },
     "dependencies": {
         "@material-ui/core": "^3.1.1",
