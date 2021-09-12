@@ -16,13 +16,9 @@ import { store } from "common/redux/store";
 
 declare const module: any;
 
-require("dotenv").config();
-
 function main() {
     const express = Express();
     const port = process.env.PORT || 3000;
-
-    console.log(process.env.REACT_APP_FINN_API_KEY);
 
     express.use(Express.static("build"));
 
